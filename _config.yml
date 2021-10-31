@@ -2,7 +2,7 @@ title: Vinicius Zucatti
 author: vczb
 email: viniciuszucatti@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
-  Meu blog 
+  Meu blog
 show_excerpts: false # set to true to show excerpts on the homepage
 
 # Minima date format
@@ -11,8 +11,9 @@ sass:
   sass_dir: _sass
 plainwhite:
   name: Vinicius Zucatti
-  tagline:  Meu blog 
+  tagline:  Meu blog
   date_format: "%b %-d, %Y"
+  analytics_id: "G-6NF9JWCLNT"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
   dark_mode: true # set to true to add dark mode toggle
