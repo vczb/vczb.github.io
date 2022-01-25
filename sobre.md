@@ -1,16 +1,12 @@
 ---
-layout: default
+layout: post
 ---
 
 ### Vinicius Zucatti - Web developer
 
 Email: viniciuszucatti@gmail.com
 
-<!--
-Phone: +55 51 991901783
 
-Birth: 12/26/1990
--->
 Locale: Brazil - Remote
 
 Github: https://github.com/vczb
