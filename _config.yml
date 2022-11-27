@@ -1,17 +1,17 @@
-title: Vinicius Zucatti
+title: Blog do Vinicius Zucatti. Programação, SEO, Linux e etc
 author: vczb
 email: viniciuszucatti@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
-  Meu blog
+  Blog sobre novidades da tecnologia, dicas de desenvolvimento de software e temas relevantes nas comunidades de TI
 show_excerpts: false # set to true to show excerpts on the homepage
-
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+domain: https://vczb.github.io
 sass:
   sass_dir: _sass
 plainwhite:
   name: Vinicius Zucatti
-  tagline:  Meu blog
+  tagline: Meu blog
   date_format: "%b %-d, %Y"
   analytics_id: "G-6NF9JWCLNT"
   sitemap: true # set to true to generate sitemap.xml content
@@ -25,7 +25,7 @@ plainwhite:
     - post
   # generate social links in footer
   social_links:
-    github:  vczb
+    github: vczb
     twitter: viniciuszucatti
     linkedIn: in/viniciuszucatti
     #rss: rss
