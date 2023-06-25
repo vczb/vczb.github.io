@@ -21,7 +21,7 @@
         <img class="light" src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}" />
         <img class="dark" src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image_dark }}" alt="{{ site.plainwhite.name }}" />
         {% else %}
-        <img src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}" />
+        <img id="avatar-image" src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}" />
         {% endif %}
       </a>
       <h2 id="title">
@@ -182,6 +182,17 @@
   <script src="{{ "/assets/js/simple-jekyll-search.min.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/search.js" | relative_url }}"></script>
   {% endif %}
+
+  <script>
+    window.dataLayer.push({
+    event: 'visitor_clicks',
+    data: {
+      visitor_click_details: 'my-image',
+      visitor_click_text: 'Hello you clicked at me',
+    }
+    });
+  </script>
 </body>
+
 
 </html>
