@@ -21,7 +21,8 @@
         <img class="light" src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}" />
         <img class="dark" src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image_dark }}" alt="{{ site.plainwhite.name }}" />
         {% else %}
-        <img id="avatar-image" src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}" />
+        <!-- <img id="avatar-image" src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}" /> -->
+        <div id="canvas-container"></div>
         {% endif %}
       </a>
       <h2 id="title">
@@ -192,6 +193,56 @@
     }
     });
   </script>
+  <script type="module">
+    import { OrbitControls } from "https://unpkg.com/three@0.112/examples/jsm/controls/OrbitControls.js";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color("transparent");
+
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setSize(300, 300);
+
+      const avatar = "{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}";
+
+      document.getElementById("canvas-container").appendChild(renderer.domElement);
+
+      const geometry = new THREE.BoxGeometry(4, 4, 4);
+      const material = new THREE.MeshBasicMaterial({ transparent: true });
+      const cube = new THREE.Mesh(geometry, material);
+      scene.add(cube);
+
+      const textureLoader = new THREE.TextureLoader();
+      textureLoader.load(avatar, (texture) => {
+        cube.material.map = texture;
+        cube.material.needsUpdate = true;
+      });
+
+      camera.position.z = 5;
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+
+      const animate = function () {
+        requestAnimationFrame(animate);
+
+        cube.rotation.x += 0.001;
+        cube.rotation.y += 0.001;
+
+        controls.update();
+
+        renderer.render(scene, camera);
+      };
+
+      animate();
+    });
+  </script>
+
 </body>
 
 
