@@ -1,0 +1,52 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js"></script>
+
+<script>
+  class Particle {
+    constructor() {
+      this.position = createVector(20, 20);
+      this.radius = 15;
+      this.velocity = createVector(1, 1);
+      this.acceleration = createVector(0.0, 0.0);
+    }
+
+    render() {
+      const diameter = this.radius * 2;
+      ellipse(this.position.x, this.position.y, diameter);
+    }
+
+    update() {
+      this.position.add(this.velocity);
+      this.velocity.add(this.acceleration);
+      this.acceleration = createVector(mouseX, mouseY)
+        .sub(this.position)
+        .mult(0.001);
+      this.velocity.limit(5);
+    }
+  }
+
+  let particle;
+
+  function setup() {
+    createCanvas(window.innerWidth, window.innerHeight);
+    background(`${canvasColor}`);
+    particle = new Particle();
+  }
+
+  function draw() {
+    background(`${canvasColor}`);
+    particle.render();
+    particle.update();
+  }
+</script>
+<style>
+  canvas {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  body,
+  main {
+    position: relative;
+  }
+</style>

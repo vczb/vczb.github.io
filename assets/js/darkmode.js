@@ -6,9 +6,11 @@ function toggleDarkMode() {
   if (body.classList.contains(DARK_CLASS)) {
     setCookie("theme", "light");
     body.classList.remove(DARK_CLASS);
+    canvasColor = "#fff";
   } else {
     setCookie("theme", "dark");
     body.classList.add(DARK_CLASS);
+    canvasColor = "#171717";
   }
 
   window.dataLayer = window.dataLayer || [];
@@ -43,8 +45,10 @@ if ((theme === null && userPrefersDark) || theme === "dark") {
   function checkDark() {
     if (!checkDarkDone) {
       toggleDarkMode();
+      canvasColor = "#fff";
     }
     checkDarkDone = true;
+    canvasColor = "#171717";
   }
 
   function toggleSwitch() {
