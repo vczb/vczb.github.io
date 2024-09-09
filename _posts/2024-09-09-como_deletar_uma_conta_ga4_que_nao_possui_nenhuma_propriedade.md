@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Como deletar uma conta GA4 que não tenha nenhuma propriedade"
-date: 2022-01-21 19:00:00 +0530
+date: 2022-09-09 19:00:00 +0530
 categories: seo ga4
 ---
 
