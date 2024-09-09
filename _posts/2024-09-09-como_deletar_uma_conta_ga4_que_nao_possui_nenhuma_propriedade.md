@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Como deletar uma conta GA4 que não tenha nenhuma propriedade"
-date: 2022-09-09 19:00:00 +0530
+date: 2024-09-09 19:00:00 +0530
 categories: seo ga4
 ---
 
@@ -195,5 +195,7 @@ Este comando irá deletar a conta.
 Espero que tenha ocorrido tudo bem, se não voce pode ler os logs de erro e tentar resolver sozinho. Usar o GPT também pode ajudar.
 
 Obrigado pelo tempo!
+
+Você também pode acessar o código neste [repositório](https://github.com/vczb/GoogleAnalyticsAdminAPI_Manager) no GitHub
 
 viniciuszucatti@gmail.com
