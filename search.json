@@ -1,0 +1,75 @@
+[
+  
+    {
+      "title"    : "Configurando notificações de bateria no Ubuntu 20.04",
+      "title-lower"    : "configurando notificações de bateria no ubuntu 20.04",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "seoga4",
+      "tags"     : "",
+      "url"      : "/seo/ga4/2022/01/21/como_deletar_uma_conta_ga4_que_nao_possui_nenhuma_propriedade.html",
+      "date"     : "2022-01-21 13:30:00 +0000",
+      "content"     : "Se voce está tentando deletar uma conta no Google Analytics 4 que não possui nenhuma propriedade e não está conseguindo por causa do erro “Missing permissions / Request Access” vou te ensiar um jei..."
+    } ,
+  
+    {
+      "title"    : "Configurando notificações de bateria no Ubuntu 20.04",
+      "title-lower"    : "configurando notificações de bateria no ubuntu 20.04",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "linuxubuntu",
+      "tags"     : "",
+      "url"      : "/linux/ubuntu/2022/01/21/configurando_notifica%C3%A7%C3%B5es_de_bateria_no_ubuntu_20.04.html",
+      "date"     : "2022-01-21 13:30:00 +0000",
+      "content"     : "Sempre achei o percentual para notificar carga baixa da bateria no Ubuntu 20.04 ruim, o sistema esperava até os últimos suspiros para me avisar “Bateria baixa”. Em alguns casos nem dava tempo de pe..."
+    } ,
+  
+    {
+      "title"    : "Entendendo variáveis de ambiente no NextJS",
+      "title-lower"    : "entendendo variáveis de ambiente no nextjs",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "NextJS",
+      "tags"     : "",
+      "url"      : "/nextjs/2021/10/31/entendendo_vari%C3%A1veis_de_ambiente_no_nextjs.html",
+      "date"     : "2021-10-31 13:30:00 +0000",
+      "content"     : "Por mais simples que pareçam, as variáveis de ambiente no NextJS tem as suas peculiaridades.Vamos começar pelo nome de prefixo NEXT_PUBLIC_, serve para diferenciar as variáveis que estarão disponív..."
+    } ,
+  
+    {
+      "title"    : "VSCode snippets personalizados por workspace",
+      "title-lower"    : "vscode snippets personalizados por workspace",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "VSCode",
+      "tags"     : "",
+      "url"      : "/vscode/2021/07/20/vscode_snippet_personalizados_por_workspace.html",
+      "date"     : "2021-07-20 13:30:00 +0000",
+      "content"     : "Sabe aqueles projetos que são cheios de custom hooks, funções ou até estruturas para documentação que você precisa estar escrevendo toda hora ?Vou apresentar uma solução legal para agilizar estes p..."
+    } ,
+  
+    {
+      "title"    : "Deploy automatizado de pull request com Heroku e Github",
+      "title-lower"    : "deploy automatizado de pull request com heroku e github",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "deploy",
+      "tags"     : "",
+      "url"      : "/deploy/2021/07/12/deploy-automatizado-depull-request-com-heroku-e-github.html",
+      "date"     : "2021-07-12 13:30:00 +0000",
+      "content"     : "Já pensou o quanto pode agilizar o processo de desenvolvimento e code review se para cada pull request no repositório houvesse um ambiente deployado ?Com Heroku isso é possível e bem simples graças..."
+    } ,
+  
+    {
+      "title"    : "Meu primeiro post",
+      "title-lower"    : "meu primeiro post",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "open-source",
+      "tags"     : "",
+      "url"      : "/open-source/2021/07/03/meu-primeiro-post.html",
+      "date"     : "2021-07-03 13:30:00 +0000",
+      "content"     : "Olá pessoal, sou Vinicius Zucatti e este é o meu blog pessoal.Aqui pretendo falar sobre:  Novidades da tecnologia  Coisas que estou aprendendo  Dicas de desenvolvimento de software  Temas relevante..."
+    } 
+  
+]

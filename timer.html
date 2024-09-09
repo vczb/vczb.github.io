@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="canonical" href="https://vczb.github.io/timer.html" />
+
+<script>
+  var canvasColor = "#fff";
+</script>
+
+<title>Timer</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Timer | Blog do Vinicius Zucatti. Programação, SEO, Linux e etc</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Timer" />
+<meta name="author" content="vczb" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Blog sobre novidades da tecnologia, dicas de desenvolvimento de software e temas relevantes nas comunidades de TI" />
+<meta property="og:description" content="Blog sobre novidades da tecnologia, dicas de desenvolvimento de software e temas relevantes nas comunidades de TI" />
+<meta property="og:site_name" content="Blog do Vinicius Zucatti. Programação, SEO, Linux e etc" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Timer" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"vczb"},"description":"Blog sobre novidades da tecnologia, dicas de desenvolvimento de software e temas relevantes nas comunidades de TI","headline":"Timer","url":"/timer.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+
+
+<!-- Google Optimize -->
+<script src="https://www.googleoptimize.com/optimize.js?id=OPT-5MPPNL9"></script>
+<!-- End Google Optimize -->
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5RBKZFL');</script>
+  <!-- End Google Tag Manager -->
+
+<style>
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		font-size: 20px;
+		height: 80vh;
+	}
+	p {text-align: center; line-height: 2em;}
+	.container {
+		display: grid;
+		grid-auto-flow: column;
+		margin-bottom: 40px;
+	}
+	.button-group{
+		grid-gap: 10px;
+	}
+	.timmer-group{
+		grid-gap: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div class="container timer-group" >
+		<span id="hour">00</span>
+		<span>:</span>
+		<span id="minutes" >00</span>
+		<span>:</span>
+		<span id="seconds" >00</span>
+	</div>
+	<div class="container button-group" >
+		<button id="play" >Play</button>
+		<button id="pause" >Pause</button>
+		<button id="reset" >Reset</button>
+	</div>
+</body>
+	<script>
+		const hour = document.getElementById('hour')
+		const minutes = document.getElementById('minutes')
+		const seconds = document.getElementById('seconds')
+		const play 	= document.getElementById('play')
+		const pause = document.getElementById('pause')
+		const reset = document.getElementById('reset')
+		let timer
+
+		function resetTime(element){
+			element.innerText = '00'
+		}
+
+		function amountTime(element){
+			const currentTime = parseInt(element.innerText)
+			const formatTime= (time) => {
+				if(String(time).length == 1 && time <= 8){
+					return `0${time + 1}`
+				}else{
+					return time + 1
+				}
+			}
+
+			if(currentTime < 60){
+				element.innerText = formatTime(currentTime)
+				return true
+			}else {
+				resetTime(element)
+				return false
+			}
+		}
+
+
+
+		play.addEventListener('click', ()=> {
+			timer = setInterval(()=>{
+				if(!amountTime(seconds)){
+					if(!amountTime(minutes)){
+						amountTime(hour)
+					}
+				}
+			}, 1000)
+		})
+		pause.addEventListener('click', () => {
+			clearInterval(timer)
+		})
+		reset.addEventListener('click', () => {
+			clearInterval(timer)
+			resetTime(hour)
+			resetTime(minutes)
+			resetTime(seconds)
+		})
+
+	</script>
+</html>

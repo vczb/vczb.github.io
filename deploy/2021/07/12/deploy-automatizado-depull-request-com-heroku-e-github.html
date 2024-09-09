@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="canonical" href="https://vczb.github.io/deploy/2021/07/12/deploy-automatizado-depull-request-com-heroku-e-github.html" />
+
+<script>
+  var canvasColor = "#fff";
+</script>
+
+<title>Deploy automatizado de pull request com Heroku e Github</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Deploy automatizado de pull request com Heroku e Github | Blog do Vinicius Zucatti. Programação, SEO, Linux e etc</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Deploy automatizado de pull request com Heroku e Github" />
+<meta name="author" content="vczb" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Já pensou o quanto pode agilizar o processo de desenvolvimento e code review se para cada pull request no repositório houvesse um ambiente deployado ?" />
+<meta property="og:description" content="Já pensou o quanto pode agilizar o processo de desenvolvimento e code review se para cada pull request no repositório houvesse um ambiente deployado ?" />
+<meta property="og:site_name" content="Blog do Vinicius Zucatti. Programação, SEO, Linux e etc" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-12T13:30:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Deploy automatizado de pull request com Heroku e Github" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"vczb"},"dateModified":"2021-07-12T13:30:00+00:00","datePublished":"2021-07-12T13:30:00+00:00","description":"Já pensou o quanto pode agilizar o processo de desenvolvimento e code review se para cada pull request no repositório houvesse um ambiente deployado ?","headline":"Deploy automatizado de pull request com Heroku e Github","mainEntityOfPage":{"@type":"WebPage","@id":"/deploy/2021/07/12/deploy-automatizado-depull-request-com-heroku-e-github.html"},"url":"/deploy/2021/07/12/deploy-automatizado-depull-request-com-heroku-e-github.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+
+
+<!-- Google Optimize -->
+<script src="https://www.googleoptimize.com/optimize.js?id=OPT-5MPPNL9"></script>
+<!-- End Google Optimize -->
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5RBKZFL');</script>
+  <!-- End Google Tag Manager -->
+
+</head><body>
+
+  <main class="container">
+    <section class="about">
+      <div class="about-header condensed">
+      <div class="about-title">
+      <a href="/">
+        
+        <img id="avatar-image" src="/assets/logo.jpg" alt="Vinicius Zucatti" />
+        
+      </a>
+      <h2 id="title">
+        <a href="/">Vinicius Zucatti</a>
+      </h2>
+      </div><p class="tagline">Meu blog</p></div>
+      <div class="menu-left">
+        <a href="/sobre">Sobre</a>
+        <a href="/contato">Contato</a>
+      </div>
+      
+      <ul class="social about-footer condensed"><a href="https://github.com/vczb" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2024</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="post-container">
+  <a class="post-link" href="/deploy/2021/07/12/deploy-automatizado-depull-request-com-heroku-e-github.html">
+    <h2 class="post-title">Deploy automatizado de pull request com Heroku e Github</h2>
+  </a>
+  <div class="post-meta"><div class="post-date"><i class="icon-calendar"></i>Jul 12, 2021</div><ul class="post-categories"><li>deploy</li></ul></div>
+  <div class="post">
+    <p>Já pensou o quanto pode agilizar o processo de desenvolvimento e code review se para cada pull request no repositório houvesse um ambiente deployado ?</p>
+
+<p>Com Heroku isso é possível e bem simples graças ao <a href="https://devcenter.heroku.com/articles/github-integration-review-apps">Review Apps</a>.</p>
+
+<p>Antes de mais nada é necessário ter uma conta no Heroku, se você ainda não tem <a href="https://id.heroku.com/login">crie a sua</a></p>
+
+<p>Você também precisará de uma aplicação funcional em um repositório do <a href="https://github.com/login">Github</a>, afinal, temos que deployar algo. Para ilustrar esta postagem usaremos o <a href="https://github.com/vczb/gamou">Gamou</a>, projeto open-source que venho desenvolvendo.</p>
+
+<p>Acesse o <a href="https://dashboard.heroku.com/apps">dashboard</a> do Heroku e vá em ‘New’ -&gt; ‘Create new app’</p>
+
+<p>Irá aparecer uma tela semelhante a esta, preencha as informações do seu projeto</p>
+
+<p><img src="/assets/images/20210712/create_new_app.png" alt="Create new app" /></p>
+
+<p>Em seguida em Deployment Method selecione Github e procure o repositório</p>
+
+<p><img src="/assets/images/20210712/connect_to_github.png" alt="Deployment Method" /></p>
+
+<p>Clique em ‘Connect’</p>
+
+<p>Escolha a branch de sua preferência e clique em ‘Enable Automatic Deploys’</p>
+
+<p><img src="/assets/images/20210712/enable_auto_deploys.png" alt="Enable Automatic Deploys" /></p>
+
+<p>E clique em ‘Deploy Branch’</p>
+
+<p>Aguarde o deploy… e pronto! Temos o nosso projeto no ar, clique em ‘Open app’ e abrirá um link semelhante a este <a href="https://gamou.herokuapp.com/">https://gamou.herokuapp.com/</a></p>
+
+<p>Agora iremos configurar os deploys de pull request</p>
+
+<p>Primeiro você precisará criar um arquivo chamado <code class="language-plaintext highlighter-rouge">app.json</code> na raiz do seu repositório</p>
+
+<p>Configure conforme os dados do seu projeto</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "name": "Gamou",
+  "description": "Gamou its a gamification project",
+  "website": "https://gamou.herokuapp.com/",
+  "success_url": "/",
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "env": {
+    "RAILS_ENV": "production",
+    "COOKIE_SECRET": {
+            "description": "This gets generated",
+            "generator": "secret"
+    },
+    "SETUP_BY": {
+            "description": "Who initiated this setup",
+            "value": "",
+            "required": false
+    }
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
+}
+</code></pre></div></div>
+
+<p><em>OBS: em scripts você pode configurar comandos personalizados para executar antes ou depois do deploy. No nosso caso estamos rodando uma migration</em></p>
+
+<p>Atualize o seu App e aguarde o deploy.</p>
+
+<p>Feito isto vá em ‘Pipeline’ -&gt; ‘Settings’ -&gt; ‘Enable Review Apps’</p>
+
+<p><img src="/assets/images/20210712/enable_review_app.png" alt="Enable Review Apps" /></p>
+
+<p>Marque a opção ‘Automatically create review apps for new PRs’</p>
+
+<p><img src="/assets/images/20210712/enable_auto_create_review.png" alt="Automatically create review apps for new PRs" /></p>
+
+<p>Você também pode adicionar outras configurações conforme a sua preferência</p>
+
+<p>Se tudo deu certo você já está com as Review Apps funcionais, a cada pull request o heroku criará um ambiente novo e no seu Github você verá algo como isto:</p>
+
+<p><img src="/assets/images/20210712/view_deployment.png" alt="View Deployment" /></p>
+
+<p>Se você quer fazer um comentário ou teve alguma dificuldade, abra uma issue no <a href="https://github.com/vczb/vczb.github.io/issues">repositório do blog</a></p>
+
+<hr />
+
+<p><em>Obrigado</em></p>
+
+  </div></div>
+
+    </section>
+    <footer class="condensed">
+      <ul class="social about-footer condensed"><a href="https://github.com/vczb" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2024</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </footer>
+  </main>
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6NF9JWCLNT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-6NF9JWCLNT');
+  </script><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RBKZFL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+
+  <script>
+    window.dataLayer.push({
+    event: 'visitor_clicks',
+    data: {
+      visitor_click_details: 'my-image',
+      visitor_click_text: 'Hello you clicked at me',
+    }
+    });
+  </script>
+
+
+</body>
+
+
+</html>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js"></script>
+
+<script>
+  class Particle {
+    constructor() {
+      this.position = createVector(20, 20);
+      this.radius = 15;
+      this.velocity = createVector(1, 1);
+      this.acceleration = createVector(0.0, 0.0);
+    }
+
+    render() {
+      const diameter = this.radius * 2;
+      ellipse(this.position.x, this.position.y, diameter);
+    }
+
+    update() {
+      this.position.add(this.velocity);
+      this.velocity.add(this.acceleration);
+      this.acceleration = createVector(mouseX, mouseY)
+        .sub(this.position)
+        .mult(0.001);
+      this.velocity.limit(5);
+    }
+  }
+
+  let particle;
+
+  function setup() {
+    createCanvas(window.innerWidth, window.innerHeight);
+    background(`${canvasColor}`);
+    particle = new Particle();
+  }
+
+  function draw() {
+    background(`${canvasColor}`);
+    particle.render();
+    particle.update();
+  }
+</script>
+<style>
+  canvas {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  body,
+  main {
+    position: relative;
+  }
+</style>
+-->

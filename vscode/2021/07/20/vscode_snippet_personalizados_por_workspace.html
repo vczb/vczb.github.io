@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="canonical" href="https://vczb.github.io/vscode/2021/07/20/vscode_snippet_personalizados_por_workspace.html" />
+
+<script>
+  var canvasColor = "#fff";
+</script>
+
+<title>VSCode snippets personalizados por workspace</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>VSCode snippets personalizados por workspace | Blog do Vinicius Zucatti. Programação, SEO, Linux e etc</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="VSCode snippets personalizados por workspace" />
+<meta name="author" content="vczb" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Sabe aqueles projetos que são cheios de custom hooks, funções ou até estruturas para documentação que você precisa estar escrevendo toda hora ?" />
+<meta property="og:description" content="Sabe aqueles projetos que são cheios de custom hooks, funções ou até estruturas para documentação que você precisa estar escrevendo toda hora ?" />
+<meta property="og:site_name" content="Blog do Vinicius Zucatti. Programação, SEO, Linux e etc" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-20T13:30:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="VSCode snippets personalizados por workspace" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"vczb"},"dateModified":"2021-07-20T13:30:00+00:00","datePublished":"2021-07-20T13:30:00+00:00","description":"Sabe aqueles projetos que são cheios de custom hooks, funções ou até estruturas para documentação que você precisa estar escrevendo toda hora ?","headline":"VSCode snippets personalizados por workspace","mainEntityOfPage":{"@type":"WebPage","@id":"/vscode/2021/07/20/vscode_snippet_personalizados_por_workspace.html"},"url":"/vscode/2021/07/20/vscode_snippet_personalizados_por_workspace.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+
+
+<!-- Google Optimize -->
+<script src="https://www.googleoptimize.com/optimize.js?id=OPT-5MPPNL9"></script>
+<!-- End Google Optimize -->
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5RBKZFL');</script>
+  <!-- End Google Tag Manager -->
+
+</head><body>
+
+  <main class="container">
+    <section class="about">
+      <div class="about-header condensed">
+      <div class="about-title">
+      <a href="/">
+        
+        <img id="avatar-image" src="/assets/logo.jpg" alt="Vinicius Zucatti" />
+        
+      </a>
+      <h2 id="title">
+        <a href="/">Vinicius Zucatti</a>
+      </h2>
+      </div><p class="tagline">Meu blog</p></div>
+      <div class="menu-left">
+        <a href="/sobre">Sobre</a>
+        <a href="/contato">Contato</a>
+      </div>
+      
+      <ul class="social about-footer condensed"><a href="https://github.com/vczb" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2024</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="post-container">
+  <a class="post-link" href="/vscode/2021/07/20/vscode_snippet_personalizados_por_workspace.html">
+    <h2 class="post-title">VSCode snippets personalizados por workspace</h2>
+  </a>
+  <div class="post-meta"><div class="post-date"><i class="icon-calendar"></i>Jul 20, 2021</div><ul class="post-categories"><li>VSCode</li></ul></div>
+  <div class="post">
+    <p>Sabe aqueles projetos que são cheios de custom hooks, funções ou até estruturas para documentação que você precisa estar escrevendo toda hora ?</p>
+
+<p>Vou apresentar uma solução legal para agilizar estes processos, os <a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">snippets</a>.</p>
+
+<p><img src="/assets/images/20210720/ajax-snippet.gif" alt="Snippet" /></p>
+
+<p>Agora imagine se você pudesse compartilhar eles com o resto da equipe tornando ainda mais dinâmica a experiência de desenvolvimento, isto é possível desde o <a href="https://code.visualstudio.com/updates/v1_28#_project-level-snippets">realese v1_28</a> que adiciona as configurações de snipptes dentro do diretório <code class="language-plaintext highlighter-rouge">.vscode</code></p>
+
+<p>Então vamos por a mão na massa:</p>
+
+<p>1) Se você ainda não tem, crie uma pasta chamada <code class="language-plaintext highlighter-rouge">.vscode</code> na raiz do seu projeto</p>
+
+<p>2) Agora vamos criar nosso arquivo de snippet, devemos criar um arquivo para cada linguagem de programação que queremos adicionar métodos, para exemplificar este post, usaremos a linguagem <code class="language-plaintext highlighter-rouge">javascript</code>, mas você pode usar a que quiser.</p>
+
+<p>Crie um novo arquivo chamado <code class="language-plaintext highlighter-rouge">javascript.code-snippets</code> dentro da pasta <code class="language-plaintext highlighter-rouge">.vscode</code></p>
+
+<p>3) Vamos fazer nossos métodos personalizados, os arquivos tem a sintaxe de <code class="language-plaintext highlighter-rouge">JSON</code> e seguem esta estrutura:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"Escreve console"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="nl">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"log"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+			</span><span class="s2">"console.log('$1');"</span><span class="p">,</span><span class="w">
+			</span><span class="s2">"$2"</span><span class="w">
+		</span><span class="p">],</span><span class="w">
+		</span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Escreve o método console.log"</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+  </span><span class="nl">"Outro snippet"</span><span class="p">:{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Explicando:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">"Escreve console"</code> É o nome do snippet, deve ser único</li>
+  <li><code class="language-plaintext highlighter-rouge">"prefix"</code> É com esse “log” que você irá chamar o gatilho que resultará no método</li>
+  <li><code class="language-plaintext highlighter-rouge">"body"</code> Aqui fica o corpo do método</li>
+  <li><code class="language-plaintext highlighter-rouge">"description"</code> Essa descrição é opcional, ela aparece no IntelliSense</li>
+</ul>
+
+<p>4) Para compartilhar com a equipe basta commitar esse arquivo e subir para o repositório da sua aplicação, todos que usarem VSCode como editor de texto terão acesso a estes snippets. Lembre-se de verificar se a pasta <code class="language-plaintext highlighter-rouge">.vscode</code> não está adicionada no arquivo <code class="language-plaintext highlighter-rouge">.gitignore</code></p>
+
+<h2 id="é-isso-aí-espero-que-tenham-gostado">É isso aí, espero que tenham gostado!</h2>
+
+<p>Para elogios, sugestões e reclamações abra uma issue no <a href="https://github.com/vczb/vczb.github.io/issues">repositório do blog</a></p>
+
+  </div></div>
+
+    </section>
+    <footer class="condensed">
+      <ul class="social about-footer condensed"><a href="https://github.com/vczb" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2024</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </footer>
+  </main>
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6NF9JWCLNT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-6NF9JWCLNT');
+  </script><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RBKZFL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+
+  <script>
+    window.dataLayer.push({
+    event: 'visitor_clicks',
+    data: {
+      visitor_click_details: 'my-image',
+      visitor_click_text: 'Hello you clicked at me',
+    }
+    });
+  </script>
+
+
+</body>
+
+
+</html>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js"></script>
+
+<script>
+  class Particle {
+    constructor() {
+      this.position = createVector(20, 20);
+      this.radius = 15;
+      this.velocity = createVector(1, 1);
+      this.acceleration = createVector(0.0, 0.0);
+    }
+
+    render() {
+      const diameter = this.radius * 2;
+      ellipse(this.position.x, this.position.y, diameter);
+    }
+
+    update() {
+      this.position.add(this.velocity);
+      this.velocity.add(this.acceleration);
+      this.acceleration = createVector(mouseX, mouseY)
+        .sub(this.position)
+        .mult(0.001);
+      this.velocity.limit(5);
+    }
+  }
+
+  let particle;
+
+  function setup() {
+    createCanvas(window.innerWidth, window.innerHeight);
+    background(`${canvasColor}`);
+    particle = new Particle();
+  }
+
+  function draw() {
+    background(`${canvasColor}`);
+    particle.render();
+    particle.update();
+  }
+</script>
+<style>
+  canvas {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  body,
+  main {
+    position: relative;
+  }
+</style>
+-->

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="canonical" href="https://vczb.github.io/seo/ga4/2022/01/21/como_deletar_uma_conta_ga4_que_nao_possui_nenhuma_propriedade.html" />
+
+<script>
+  var canvasColor = "#fff";
+</script>
+
+<title>Configurando notificações de bateria no Ubuntu 20.04</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Configurando notificações de bateria no Ubuntu 20.04 | Blog do Vinicius Zucatti. Programação, SEO, Linux e etc</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Configurando notificações de bateria no Ubuntu 20.04" />
+<meta name="author" content="vczb" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Se voce está tentando deletar uma conta no Google Analytics 4 que não possui nenhuma propriedade e não está conseguindo por causa do erro “Missing permissions / Request Access” vou te ensiar um jeito não tão complicado de fazer isso com NodeJS" />
+<meta property="og:description" content="Se voce está tentando deletar uma conta no Google Analytics 4 que não possui nenhuma propriedade e não está conseguindo por causa do erro “Missing permissions / Request Access” vou te ensiar um jeito não tão complicado de fazer isso com NodeJS" />
+<meta property="og:site_name" content="Blog do Vinicius Zucatti. Programação, SEO, Linux e etc" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-01-21T13:30:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Configurando notificações de bateria no Ubuntu 20.04" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"vczb"},"dateModified":"2022-01-21T13:30:00+00:00","datePublished":"2022-01-21T13:30:00+00:00","description":"Se voce está tentando deletar uma conta no Google Analytics 4 que não possui nenhuma propriedade e não está conseguindo por causa do erro “Missing permissions / Request Access” vou te ensiar um jeito não tão complicado de fazer isso com NodeJS","headline":"Configurando notificações de bateria no Ubuntu 20.04","mainEntityOfPage":{"@type":"WebPage","@id":"/seo/ga4/2022/01/21/como_deletar_uma_conta_ga4_que_nao_possui_nenhuma_propriedade.html"},"url":"/seo/ga4/2022/01/21/como_deletar_uma_conta_ga4_que_nao_possui_nenhuma_propriedade.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+
+
+<!-- Google Optimize -->
+<script src="https://www.googleoptimize.com/optimize.js?id=OPT-5MPPNL9"></script>
+<!-- End Google Optimize -->
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5RBKZFL');</script>
+  <!-- End Google Tag Manager -->
+
+</head><body>
+
+  <main class="container">
+    <section class="about">
+      <div class="about-header condensed">
+      <div class="about-title">
+      <a href="/">
+        
+        <img id="avatar-image" src="/assets/logo.jpg" alt="Vinicius Zucatti" />
+        
+      </a>
+      <h2 id="title">
+        <a href="/">Vinicius Zucatti</a>
+      </h2>
+      </div><p class="tagline">Meu blog</p></div>
+      <div class="menu-left">
+        <a href="/sobre">Sobre</a>
+        <a href="/contato">Contato</a>
+      </div>
+      
+      <ul class="social about-footer condensed"><a href="https://github.com/vczb" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2024</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="post-container">
+  <a class="post-link" href="/seo/ga4/2022/01/21/como_deletar_uma_conta_ga4_que_nao_possui_nenhuma_propriedade.html">
+    <h2 class="post-title">Configurando notificações de bateria no Ubuntu 20.04</h2>
+  </a>
+  <div class="post-meta"><div class="post-date"><i class="icon-calendar"></i>Jan 21, 2022</div><ul class="post-categories"><li>seo</li><li>ga4</li></ul></div>
+  <div class="post">
+    <p>Se voce está tentando deletar uma conta no Google Analytics 4 que não possui nenhuma propriedade e não está conseguindo por causa do erro “Missing permissions / Request Access” vou te ensiar um jeito não tão complicado de fazer isso com NodeJS</p>
+
+<p><img src="/assets/images/20240909/error.png" alt="Error" /></p>
+
+<p>Siga os seguintes passos:</p>
+
+<ol>
+  <li>Abra o Google Cloud e crie um novo projeto:</li>
+</ol>
+
+<p>https://console.cloud.google.com/welcome</p>
+
+<p><img src="/assets/images/20240909/gcloud.png" alt="Google Cloud" /></p>
+
+<ol>
+  <li>Acesse o seu projeto e vá na aba credentials</li>
+</ol>
+
+<p>https://console.cloud.google.com/apis/credentials</p>
+
+<ol>
+  <li>Clique em “Add Credentials” e crie uma nova do tipo OAuth ID</li>
+</ol>
+
+<p><img src="/assets/images/20240909/oauth.png" alt="OAuth" /></p>
+
+<p>Você precisa criar uma OAuth key</p>
+
+<ul>
+  <li>tipo OAuth client ID</li>
+  <li>Application Type: Web application</li>
+  <li>Authorized redirect URI: http://localhost:3000/oauth2callback</li>
+</ul>
+
+<ol>
+  <li>
+    <p>Nesta mesma página em “Client Secrets” fazer o download do JSON e salvar na raiz do seu projeto.</p>
+  </li>
+  <li>
+    <p>Vá até Enabled APIs &amp; services</p>
+  </li>
+</ol>
+
+<ul>
+  <li>Clique em Google Analytics Admin API</li>
+  <li>Enable API</li>
+</ul>
+
+<ol>
+  <li>Crie um novo projeto NodeJS</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init <span class="nt">-y</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Instale as bibliotecas:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>express googleapis open
+</code></pre></div></div>
+
+<ol>
+  <li>Adicione estes scrips ao package.json</li>
+</ol>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node index.js"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"delete"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node delete_ga_account.js"</span><span class="p">,</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre></div></div>
+
+<ol>
+  <li>Crie um arquivo chamado <code class="language-plaintext highlighter-rouge">index.js</code> e adicione o seguinte código:</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">express</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">fs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fs</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">path</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">google</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">googleapis</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// Initialize Express server</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nf">express</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">3000</span><span class="p">;</span>
+
+<span class="c1">// Load client credentials</span>
+<span class="kd">const</span> <span class="nx">CLIENT_SECRETS_PATH</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">./client_secret.json</span><span class="dl">"</span> <span class="c1">// Aquele arquivo que voce fez download antes</span>
+<span class="p">);</span>
+<span class="kd">const</span> <span class="nx">credentials</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nf">readFileSync</span><span class="p">(</span><span class="nx">CLIENT_SECRETS_PATH</span><span class="p">,</span> <span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="p">));</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">client_id</span><span class="p">,</span> <span class="nx">client_secret</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">credentials</span><span class="p">.</span><span class="nx">web</span><span class="p">;</span>
+
+<span class="c1">// Set up OAuth 2.0 client</span>
+<span class="kd">const</span> <span class="nx">oAuth2Client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nc">OAuth2</span><span class="p">(</span>
+  <span class="nx">client_id</span><span class="p">,</span>
+  <span class="nx">client_secret</span><span class="p">,</span>
+  <span class="s2">`http://localhost:</span><span class="p">${</span><span class="nx">port</span><span class="p">}</span><span class="s2">/oauth2callback`</span>
+<span class="p">);</span>
+
+<span class="kd">function</span> <span class="nf">generateAuthUrl</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">authUrl</span> <span class="o">=</span> <span class="nx">oAuth2Client</span><span class="p">.</span><span class="nf">generateAuthUrl</span><span class="p">({</span>
+    <span class="na">access_type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">offline</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">scope</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">https://www.googleapis.com/auth/analytics.edit</span><span class="dl">"</span><span class="p">],</span> <span class="c1">// Include analytics.edit scope</span>
+  <span class="p">});</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorize this app by visiting this URL:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">authUrl</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/oauth2callback</span><span class="dl">"</span><span class="p">,</span> <span class="k">async </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">code</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">code</span><span class="p">;</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">code</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="c1">// Exchange the authorization code for an access token</span>
+      <span class="kd">const</span> <span class="p">{</span> <span class="nx">tokens</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">oAuth2Client</span><span class="p">.</span><span class="nf">getToken</span><span class="p">(</span><span class="nx">code</span><span class="p">);</span>
+      <span class="nx">oAuth2Client</span><span class="p">.</span><span class="nf">setCredentials</span><span class="p">(</span><span class="nx">tokens</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">OAuth 2.0 flow complete. Tokens obtained.</span><span class="dl">"</span><span class="p">);</span>
+
+      <span class="c1">// Store the tokens in a temporary file for use by the other script</span>
+      <span class="nx">fs</span><span class="p">.</span><span class="nf">writeFileSync</span><span class="p">(</span><span class="dl">"</span><span class="s2">tokens.json</span><span class="dl">"</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">tokens</span><span class="p">));</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authentication successful! You can now run the other script.</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error retrieving access token</span><span class="dl">"</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error during the OAuth process.</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="dl">"</span><span class="s2">No authorization code found.</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nf">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Server is listening on http://localhost:</span><span class="p">${</span><span class="nx">port</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+
+  <span class="c1">// Generate the OAuth URL when the server starts</span>
+  <span class="nf">generateAuthUrl</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Não se esqueça de renomear o client_secret.json para o mesmo nome do arquivo que você baixou antes</p>
+  </li>
+  <li>
+    <p>Crie um arquivo chamado <code class="language-plaintext highlighter-rouge">delete_ga_account.js</code> e adicione o seguinte código:</p>
+  </li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">google</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">googleapis</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">fs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fs</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">path</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">fileURLToPath</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// Fix __dirname for ES modules</span>
+<span class="kd">const</span> <span class="nx">__filename</span> <span class="o">=</span> <span class="nf">fileURLToPath</span><span class="p">(</span><span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">__dirname</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="nx">__filename</span><span class="p">);</span>
+
+<span class="c1">// Load client credentials and tokens</span>
+<span class="kd">const</span> <span class="nx">CLIENT_SECRETS_PATH</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">client_secret.json</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">credentials</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nf">readFileSync</span><span class="p">(</span><span class="nx">CLIENT_SECRETS_PATH</span><span class="p">,</span> <span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="p">));</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">client_id</span><span class="p">,</span> <span class="nx">client_secret</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">credentials</span><span class="p">.</span><span class="nx">web</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">tokens</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nf">readFileSync</span><span class="p">(</span><span class="dl">"</span><span class="s2">tokens.json</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="p">));</span>
+
+<span class="c1">// Set up OAuth 2.0 client with saved tokens</span>
+<span class="kd">const</span> <span class="nx">oAuth2Client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nc">OAuth2</span><span class="p">(</span>
+  <span class="nx">client_id</span><span class="p">,</span>
+  <span class="nx">client_secret</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">http://localhost:3000/oauth2callback</span><span class="dl">"</span>
+<span class="p">);</span>
+
+<span class="nx">oAuth2Client</span><span class="p">.</span><span class="nf">setCredentials</span><span class="p">(</span><span class="nx">tokens</span><span class="p">);</span>
+
+<span class="c1">// Function to delete the Google Analytics account</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">deleteAccount</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">analyticsAdmin</span> <span class="o">=</span> <span class="nx">google</span><span class="p">.</span><span class="nf">analyticsadmin</span><span class="p">({</span>
+      <span class="na">version</span><span class="p">:</span> <span class="dl">"</span><span class="s2">v1beta</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">auth</span><span class="p">:</span> <span class="nx">oAuth2Client</span><span class="p">,</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">accountId</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">accounts/251892362</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// Adicione o ID da conta que você quer deletar</span>
+
+    <span class="c1">// Delete the account</span>
+    <span class="k">await</span> <span class="nx">analyticsAdmin</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="k">delete</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="nx">accountId</span> <span class="p">});</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Account </span><span class="p">${</span><span class="nx">accountId</span><span class="p">}</span><span class="s2"> has been successfully deleted.`</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error deleting account:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Execute the deletion</span>
+<span class="nf">deleteAccount</span><span class="p">();</span>
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Não se esqueça de alterar o <code class="language-plaintext highlighter-rouge">client_secret.json</code> e o ID da conta que você deseja excluir.</p>
+  </li>
+  <li>
+    <p>Execute o comando:</p>
+  </li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run start
+</code></pre></div></div>
+
+<p>Abra o link, autorize. Se tudo deu certo um arquivo token.json deverá ser criado na raiz do seu repositório.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run delete
+</code></pre></div></div>
+
+<p>Este comando irá deletar a conta.</p>
+
+<hr />
+
+<p>Espero que tenha ocorrido tudo bem, se não voce pode ler os logs de erro e tentar resolver sozinho. Usar o GPT também pode ajudar.</p>
+
+<p>Obrigado pelo tempo!</p>
+
+<p>viniciuszucatti@gmail.com</p>
+
+  </div></div>
+
+    </section>
+    <footer class="condensed">
+      <ul class="social about-footer condensed"><a href="https://github.com/vczb" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2024</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </footer>
+  </main>
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6NF9JWCLNT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-6NF9JWCLNT');
+  </script><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RBKZFL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+
+  <script>
+    window.dataLayer.push({
+    event: 'visitor_clicks',
+    data: {
+      visitor_click_details: 'my-image',
+      visitor_click_text: 'Hello you clicked at me',
+    }
+    });
+  </script>
+
+
+</body>
+
+
+</html>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js"></script>
+
+<script>
+  class Particle {
+    constructor() {
+      this.position = createVector(20, 20);
+      this.radius = 15;
+      this.velocity = createVector(1, 1);
+      this.acceleration = createVector(0.0, 0.0);
+    }
+
+    render() {
+      const diameter = this.radius * 2;
+      ellipse(this.position.x, this.position.y, diameter);
+    }
+
+    update() {
+      this.position.add(this.velocity);
+      this.velocity.add(this.acceleration);
+      this.acceleration = createVector(mouseX, mouseY)
+        .sub(this.position)
+        .mult(0.001);
+      this.velocity.limit(5);
+    }
+  }
+
+  let particle;
+
+  function setup() {
+    createCanvas(window.innerWidth, window.innerHeight);
+    background(`${canvasColor}`);
+    particle = new Particle();
+  }
+
+  function draw() {
+    background(`${canvasColor}`);
+    particle.render();
+    particle.update();
+  }
+</script>
+<style>
+  canvas {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  body,
+  main {
+    position: relative;
+  }
+</style>
+-->

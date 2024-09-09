@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="canonical" href="https://vczb.github.io/linux/ubuntu/2022/01/21/configurando_notifica%C3%A7%C3%B5es_de_bateria_no_ubuntu_20.04.html" />
+
+<script>
+  var canvasColor = "#fff";
+</script>
+
+<title>Configurando notificações de bateria no Ubuntu 20.04</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Configurando notificações de bateria no Ubuntu 20.04 | Blog do Vinicius Zucatti. Programação, SEO, Linux e etc</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Configurando notificações de bateria no Ubuntu 20.04" />
+<meta name="author" content="vczb" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Sempre achei o percentual para notificar carga baixa da bateria no Ubuntu 20.04 ruim, o sistema esperava até os últimos suspiros para me avisar “Bateria baixa”. Em alguns casos nem dava tempo de pegar o carregador e colocá-lo na tomada, o note apagava." />
+<meta property="og:description" content="Sempre achei o percentual para notificar carga baixa da bateria no Ubuntu 20.04 ruim, o sistema esperava até os últimos suspiros para me avisar “Bateria baixa”. Em alguns casos nem dava tempo de pegar o carregador e colocá-lo na tomada, o note apagava." />
+<meta property="og:site_name" content="Blog do Vinicius Zucatti. Programação, SEO, Linux e etc" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-01-21T13:30:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Configurando notificações de bateria no Ubuntu 20.04" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"vczb"},"dateModified":"2022-01-21T13:30:00+00:00","datePublished":"2022-01-21T13:30:00+00:00","description":"Sempre achei o percentual para notificar carga baixa da bateria no Ubuntu 20.04 ruim, o sistema esperava até os últimos suspiros para me avisar “Bateria baixa”. Em alguns casos nem dava tempo de pegar o carregador e colocá-lo na tomada, o note apagava.","headline":"Configurando notificações de bateria no Ubuntu 20.04","mainEntityOfPage":{"@type":"WebPage","@id":"/linux/ubuntu/2022/01/21/configurando_notifica%C3%A7%C3%B5es_de_bateria_no_ubuntu_20.04.html"},"url":"/linux/ubuntu/2022/01/21/configurando_notifica%C3%A7%C3%B5es_de_bateria_no_ubuntu_20.04.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+
+
+<!-- Google Optimize -->
+<script src="https://www.googleoptimize.com/optimize.js?id=OPT-5MPPNL9"></script>
+<!-- End Google Optimize -->
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5RBKZFL');</script>
+  <!-- End Google Tag Manager -->
+
+</head><body>
+
+  <main class="container">
+    <section class="about">
+      <div class="about-header condensed">
+      <div class="about-title">
+      <a href="/">
+        
+        <img id="avatar-image" src="/assets/logo.jpg" alt="Vinicius Zucatti" />
+        
+      </a>
+      <h2 id="title">
+        <a href="/">Vinicius Zucatti</a>
+      </h2>
+      </div><p class="tagline">Meu blog</p></div>
+      <div class="menu-left">
+        <a href="/sobre">Sobre</a>
+        <a href="/contato">Contato</a>
+      </div>
+      
+      <ul class="social about-footer condensed"><a href="https://github.com/vczb" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2024</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="post-container">
+  <a class="post-link" href="/linux/ubuntu/2022/01/21/configurando_notifica%C3%A7%C3%B5es_de_bateria_no_ubuntu_20.04.html">
+    <h2 class="post-title">Configurando notificações de bateria no Ubuntu 20.04</h2>
+  </a>
+  <div class="post-meta"><div class="post-date"><i class="icon-calendar"></i>Jan 21, 2022</div><ul class="post-categories"><li>linux</li><li>ubuntu</li></ul></div>
+  <div class="post">
+    <p>Sempre achei o percentual para notificar carga baixa da bateria no Ubuntu 20.04 ruim, o sistema esperava até os últimos suspiros para me avisar “Bateria baixa”. Em alguns casos nem dava tempo de pegar o carregador e colocá-lo na tomada, o note apagava.</p>
+
+<p>A primeira solução que me veio à cabeça foi criar um <a href="https://gist.github.com/vczb/c54edcf5ba542b9b0699e505620b4767">script</a> que media a bateria a cada x tempo e notifica se for necessário</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+
+while sleep 180s
+
+do
+ STATE=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state" | sed  -e 's/state://ig');
+
+ PERCENT=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "percentage" | sed  -e 's/[^0-9]//ig')
+
+ if [ $STATE != 'charging' ]; then
+
+   if [ $PERCENT -lt 20 ]; then
+
+     notify-send -i battery-caution "Battery with only $PERCENT%" '\nConnect your notebook to the charger\n'
+
+   fi
+
+ else
+
+   if [ $PERCENT -gt 92 ]; then
+
+     notify-send -i battery-full "Battery charged successfully" '\nDisconnect your notebook from the charger\n'
+
+   fi
+
+ fi
+
+done
+</code></pre></div></div>
+<p>E funcionou, sem problema nenhum… mas eu queria encontrar uma solução melhor, que não fosse necessário executar nada em segundo plano.</p>
+
+<p>Foi então que após algumas horas de pesquisa descobri o arquivo <a href="https://gist.github.com/vczb/4ffcdfd39d87001aab249a87ca72fcbe">UPower.conf</a> localizado no path <code class="language-plaintext highlighter-rouge">/etc/UPower/Upower.conf</code></p>
+
+<p>Nele estão as configurações de energia do sistema. Por default as configurações de notificação são:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//linha 65
+PercentageLow=10
+PercentageCritical=3
+PercentageAction=2
+</code></pre></div></div>
+
+<p>Após uma simples alteração nos valores meu problema foi solucionado:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PercentageLow=30
+PercentageCritical=10
+PercentageAction=5
+</code></pre></div></div>
+
+<p>Agora sim, logo que chegar aos 30% de carga recebo uma notificação do sistema. =)</p>
+
+<hr />
+
+<p>Espero que este tutorial tenha te ajudado</p>
+
+
+  </div></div>
+
+    </section>
+    <footer class="condensed">
+      <ul class="social about-footer condensed"><a href="https://github.com/vczb" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/viniciuszucatti" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2024</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </footer>
+  </main>
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6NF9JWCLNT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-6NF9JWCLNT');
+  </script><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RBKZFL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+
+  <script>
+    window.dataLayer.push({
+    event: 'visitor_clicks',
+    data: {
+      visitor_click_details: 'my-image',
+      visitor_click_text: 'Hello you clicked at me',
+    }
+    });
+  </script>
+
+
+</body>
+
+
+</html>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js"></script>
+
+<script>
+  class Particle {
+    constructor() {
+      this.position = createVector(20, 20);
+      this.radius = 15;
+      this.velocity = createVector(1, 1);
+      this.acceleration = createVector(0.0, 0.0);
+    }
+
+    render() {
+      const diameter = this.radius * 2;
+      ellipse(this.position.x, this.position.y, diameter);
+    }
+
+    update() {
+      this.position.add(this.velocity);
+      this.velocity.add(this.acceleration);
+      this.acceleration = createVector(mouseX, mouseY)
+        .sub(this.position)
+        .mult(0.001);
+      this.velocity.limit(5);
+    }
+  }
+
+  let particle;
+
+  function setup() {
+    createCanvas(window.innerWidth, window.innerHeight);
+    background(`${canvasColor}`);
+    particle = new Particle();
+  }
+
+  function draw() {
+    background(`${canvasColor}`);
+    particle.render();
+    particle.update();
+  }
+</script>
+<style>
+  canvas {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  body,
+  main {
+    position: relative;
+  }
+</style>
+-->
